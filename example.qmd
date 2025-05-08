@@ -14,3 +14,52 @@ This is a conflicting line added on main.
 
 This is a test line added from testbranch.
 
+## Gender Life Expectancy Gap Over Time
+
+
+The following plot shows the global average male and female life expectancy at birth from 1950 to 2023, based on the dataset.
+
+-Figure @fig-trend-global hows that both male and female life expectancy have increased significantly from 1950 to 2023, with females consistently living longer than males.
+
+```{r}
+#| label: fig-trend-global
+#| fig-cap: "Global trend in male and female life expectancy at birth from 1950 to 2023."
+#| out-width: "90%"
+#| echo: false
+#| warning: false
+#| message: false
+
+library(tidyverse)
+
+data <- read_csv("data/life-expectancy-of-women-vs-life-expectancy-of-men.csv")
+
+data_clean <- data %>%
+  rename(
+    country = Entity,
+    year = Year,
+    female_life = `Life expectancy - Sex: female - Age: 0 - Variant: estimates`,
+    male_life = `Life expectancy - Sex: male - Age: 0 - Variant: estimates`
+  )
+
+trend_data <- data_clean %>%
+  group_by(year) %>%
+  summarise(
+    female_avg = mean(female_life, na.rm = TRUE),
+    male_avg = mean(male_life, na.rm = TRUE)
+  ) %>%
+  pivot_longer(cols = c(female_avg, male_avg),
+               names_to = "gender",
+               values_to = "life_expectancy")
+
+ggplot(trend_data, aes(x = year, y = life_expectancy, color = gender)) +
+  geom_line(size = 1.2) +
+  labs(
+    title = "Life Expectancy Trends by Gender",
+    x = "Year",
+    y = "Life Expectancy (years)",
+    color = "Gender"
+  ) +
+  theme_minimal()
+
+```
+
