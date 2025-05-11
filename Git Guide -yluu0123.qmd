@@ -35,11 +35,11 @@ To demonstrate key Git workflows for collaboration and version control, includin
 
 # 2️⃣ Add, Commit and Push a File
 
-1.  Create a new qmd file: Go to **File → New File → Quarto Document**
+1.  Create a new `qmd` file: Go to **File → New File → Quarto Document**
 
 2.  Save it as `example.qmd` in the project folder
 
-Add the following content to the qmd file:
+Add the following content to the `qmd` file:
 
 ``` bash
 ### Hello
@@ -244,7 +244,7 @@ knitr::include_graphics("Images/main-testbranch-edited.png")
 
 # 6️⃣ Merge testbranch into main and resolve conflict
 
-## 🧩 Step 1: Merge Branches
+## 🧩 1. Merge Branches
 
 In the **Terminal**, switch to `main` if you're not already on it, Then merge the changes from `testbranch`:
 
@@ -261,7 +261,7 @@ Automatic merge failed; fix conflicts and then commit the result.
 
 👉 *This means Git could not automatically merge the two versions because both branches edited the same part of the file.*
 
-## 🛠️ Step 2: Resolve the Conflict
+## 🛠  2. Resolve the Conflict
 
 Open `example.qmd` in RStudio. You’ll see Git's conflict markers:
 
@@ -301,7 +301,7 @@ Then save the file.
 ✅ You’ve now resolved the conflict in your working directory.
 
 
-## 💾 Step 3: Commit the Fix
+## 💾 3. Commit the Fix
 
 After editing, return to the Terminal and stage the resolved file:
 
@@ -310,7 +310,7 @@ git add example.qmd
 git commit -m "Resolve merge conflict in example.qmd"
 ```
 
-## 🚀 Step 4: Push to GitHub
+## 🚀 4. Push to GitHub
 
 ```bash
 git push
@@ -496,13 +496,9 @@ The following plot shows the global average male and female life expectancy at b
 
 ```
 
--Figure @fig-trend-global hows that both male and female life expectancy have increased significantly from 1950 to 2023, with females consistently living longer than males.
-
 ```{r}
 #| label: fig-trend-global
 #| fig-cap: "Global trend in male and female life expectancy at birth from 1950 to 2023."
-#| out-width: "90%"
-#| echo: false
 #| warning: false
 #| message: false
 
@@ -539,6 +535,8 @@ ggplot(trend_data, aes(x = year, y = life_expectancy, color = gender)) +
   theme_minimal()
 
 ```
+-Figure @fig-trend-global hows that both male and female life expectancy have increased significantly from 1950 to 2023, with females consistently living longer than males.
+
 
 ✅ Save the file.
 
@@ -602,4 +600,11 @@ knitr::include_graphics("Images/reset-plot.png")
 | `git push origin --delete branch`| Deletes branch from remote             |
 
 
+
+
 🎉 You've now practiced essential Git skills — from branching and committing to conflict resolution and rollback!
+
+
+
+
+Git repository link: https://github.com/yluu0123/ETC5513-assignment-2-Git-Guide

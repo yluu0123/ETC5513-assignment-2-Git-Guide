@@ -109,10 +109,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#merge-testbranch-into-main-and-resolve-conflict" id="toc-merge-testbranch-into-main-and-resolve-conflict" class="nav-link" data-scroll-target="#merge-testbranch-into-main-and-resolve-conflict">6️⃣ Merge testbranch into main and resolve conflict</a>
   <ul class="collapse">
-  <li><a href="#step-1-merge-branches" id="toc-step-1-merge-branches" class="nav-link" data-scroll-target="#step-1-merge-branches">🧩 Step 1: Merge Branches</a></li>
-  <li><a href="#step-2-resolve-the-conflict" id="toc-step-2-resolve-the-conflict" class="nav-link" data-scroll-target="#step-2-resolve-the-conflict">🛠️ Step 2: Resolve the Conflict</a></li>
-  <li><a href="#step-3-commit-the-fix" id="toc-step-3-commit-the-fix" class="nav-link" data-scroll-target="#step-3-commit-the-fix">💾 Step 3: Commit the Fix</a></li>
-  <li><a href="#step-4-push-to-github" id="toc-step-4-push-to-github" class="nav-link" data-scroll-target="#step-4-push-to-github">🚀 Step 4: Push to GitHub</a></li>
+  <li><a href="#merge-branches" id="toc-merge-branches" class="nav-link" data-scroll-target="#merge-branches">🧩 1. Merge Branches</a></li>
+  <li><a href="#resolve-the-conflict" id="toc-resolve-the-conflict" class="nav-link" data-scroll-target="#resolve-the-conflict">🛠 2. Resolve the Conflict</a></li>
+  <li><a href="#commit-the-fix" id="toc-commit-the-fix" class="nav-link" data-scroll-target="#commit-the-fix">💾 3. Commit the Fix</a></li>
+  <li><a href="#push-to-github" id="toc-push-to-github" class="nav-link" data-scroll-target="#push-to-github">🚀 4. Push to GitHub</a></li>
   </ul></li>
   <li><a href="#tag-the-commit-as-v1.0" id="toc-tag-the-commit-as-v1.0" class="nav-link" data-scroll-target="#tag-the-commit-as-v1.0">7️⃣ Tag the Commit as <code>v1.0</code></a>
   <ul class="collapse">
@@ -193,10 +193,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="add-commit-and-push-a-file" class="level1">
 <h1>2️⃣ Add, Commit and Push a File</h1>
 <ol type="1">
-<li><p>Create a new qmd file: Go to <strong>File → New File → Quarto Document</strong></p></li>
+<li><p>Create a new <code>qmd</code> file: Go to <strong>File → New File → Quarto Document</strong></p></li>
 <li><p>Save it as <code>example.qmd</code> in the project folder</p></li>
 </ol>
-<p>Add the following content to the qmd file:</p>
+<p>Add the following content to the <code>qmd</code> file:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">### Hello</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">I</span> have a dog, we are best friends</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Then, save it and click the Render button.</p>
@@ -206,7 +206,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div id="fig-render-html" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-render-html-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="images/fig-render-html.png" class="img-fluid figure-img">
+<img src="images/fig-render-html.png" class="img-fluid figure-img" style="width:80.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-render-html-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;1: Rendering the example.qmd file into HTML in RStudio.
@@ -362,8 +362,8 @@ Figure&nbsp;4: example.qmd was edited differently on ‘main’ and ‘testbranc
 </section>
 <section id="merge-testbranch-into-main-and-resolve-conflict" class="level1">
 <h1>6️⃣ Merge testbranch into main and resolve conflict</h1>
-<section id="step-1-merge-branches" class="level2">
-<h2 class="anchored" data-anchor-id="step-1-merge-branches">🧩 Step 1: Merge Branches</h2>
+<section id="merge-branches" class="level2">
+<h2 class="anchored" data-anchor-id="merge-branches">🧩 1. Merge Branches</h2>
 <p>In the <strong>Terminal</strong>, switch to <code>main</code> if you’re not already on it, Then merge the changes from <code>testbranch</code>:</p>
 <div class="sourceCode" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> merge testbranch</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>You will likely see a message like this:</p>
@@ -371,8 +371,8 @@ Figure&nbsp;4: example.qmd was edited differently on ‘main’ and ‘testbranc
 Automatic merge failed; fix conflicts and then commit the result.</code></pre>
 <p>👉 <em>This means Git could not automatically merge the two versions because both branches edited the same part of the file.</em></p>
 </section>
-<section id="step-2-resolve-the-conflict" class="level2">
-<h2 class="anchored" data-anchor-id="step-2-resolve-the-conflict">🛠️ Step 2: Resolve the Conflict</h2>
+<section id="resolve-the-conflict" class="level2">
+<h2 class="anchored" data-anchor-id="resolve-the-conflict">🛠 2. Resolve the Conflict</h2>
 <p>Open <code>example.qmd</code> in RStudio. You’ll see Git’s conflict markers:</p>
 <pre class="pgsql"><code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
 This is a conflicting line added on main.
@@ -396,14 +396,14 @@ This is a test line added from testbranch.
 <p>Then save the file.</p>
 <p>✅ You’ve now resolved the conflict in your working directory.</p>
 </section>
-<section id="step-3-commit-the-fix" class="level2">
-<h2 class="anchored" data-anchor-id="step-3-commit-the-fix">💾 Step 3: Commit the Fix</h2>
+<section id="commit-the-fix" class="level2">
+<h2 class="anchored" data-anchor-id="commit-the-fix">💾 3. Commit the Fix</h2>
 <p>After editing, return to the Terminal and stage the resolved file:</p>
 <div class="sourceCode" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add example.qmd</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Resolve merge conflict in example.qmd"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="step-4-push-to-github" class="level2">
-<h2 class="anchored" data-anchor-id="step-4-push-to-github">🚀 Step 4: Push to GitHub</h2>
+<section id="push-to-github" class="level2">
+<h2 class="anchored" data-anchor-id="push-to-github">🚀 4. Push to GitHub</h2>
 <div class="sourceCode" id="cb22"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>✅ You can now see the merge result on GitHub.</p>
 <p>See Figure <a href="#fig-merge-resolved" class="quarto-xref">Figure&nbsp;5</a> for the resolved conflict commit on GitHub.</p>
@@ -543,13 +543,43 @@ cd28530 Edit example.qmd in testbranch
 <div class="sourceCode" id="cb34"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Gender Life Expectancy Gap Over Time</span></span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a><span class="ex">The</span> following plot shows the global average male and female life expectancy at birth from 1950 to 2023, based on the dataset.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>-Figure <a href="#fig-trend-global" class="quarto-xref">Figure&nbsp;8</a> hows that both male and female life expectancy have increased significantly from 1950 to 2023, with females consistently living longer than males.</p>
 <div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/life-expectancy-of-women-vs-life-expectancy-of-men.csv"</span>)</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a>data_clean <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(</span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">country =</span> Entity,</span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">year =</span> Year,</span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">female_life =</span> <span class="st">`</span><span class="at">Life expectancy - Sex: female - Age: 0 - Variant: estimates</span><span class="st">`</span>,</span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">male_life =</span> <span class="st">`</span><span class="at">Life expectancy - Sex: male - Age: 0 - Variant: estimates</span><span class="st">`</span></span>
+<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a>trend_data <span class="ot">&lt;-</span> data_clean <span class="sc">%&gt;%</span></span>
+<span id="cb35-14"><a href="#cb35-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(year) <span class="sc">%&gt;%</span></span>
+<span id="cb35-15"><a href="#cb35-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb35-16"><a href="#cb35-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">female_avg =</span> <span class="fu">mean</span>(female_life, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb35-17"><a href="#cb35-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">male_avg =</span> <span class="fu">mean</span>(male_life, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb35-18"><a href="#cb35-18" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb35-19"><a href="#cb35-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(female_avg, male_avg),</span>
+<span id="cb35-20"><a href="#cb35-20" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">"gender"</span>,</span>
+<span id="cb35-21"><a href="#cb35-21" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">"life_expectancy"</span>)</span>
+<span id="cb35-22"><a href="#cb35-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-23"><a href="#cb35-23" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(trend_data, <span class="fu">aes</span>(<span class="at">x =</span> year, <span class="at">y =</span> life_expectancy, <span class="at">color =</span> gender)) <span class="sc">+</span></span>
+<span id="cb35-24"><a href="#cb35-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">size =</span> <span class="fl">1.2</span>) <span class="sc">+</span></span>
+<span id="cb35-25"><a href="#cb35-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb35-26"><a href="#cb35-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Life Expectancy Trends by Gender"</span>,</span>
+<span id="cb35-27"><a href="#cb35-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Year"</span>,</span>
+<span id="cb35-28"><a href="#cb35-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Life Expectancy (years)"</span>,</span>
+<span id="cb35-29"><a href="#cb35-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">color =</span> <span class="st">"Gender"</span></span>
+<span id="cb35-30"><a href="#cb35-30" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb35-31"><a href="#cb35-31" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-trend-global" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-trend-global-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="Git-Guide--yluu0123_files/figure-html/fig-trend-global-1.png" class="img-fluid figure-img" style="width:90.0%">
+<img src="Git-Guide--yluu0123_files/figure-html/fig-trend-global-1.png" class="img-fluid figure-img" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-trend-global-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;8: Global trend in male and female life expectancy at birth from 1950 to 2023.
@@ -558,13 +588,14 @@ Figure&nbsp;8: Global trend in male and female life expectancy at birth from 195
 </div>
 </div>
 </div>
+<p>-Figure <a href="#fig-trend-global" class="quarto-xref">Figure&nbsp;8</a> hows that both male and female life expectancy have increased significantly from 1950 to 2023, with females consistently living longer than males.</p>
 <p>✅ Save the file.</p>
 </section>
 <section id="stage-and-commit-the-plot" class="level2">
 <h2 class="anchored" data-anchor-id="stage-and-commit-the-plot">💾 2. Stage and Commit the Plot</h2>
 <p>In the <strong>Terminal</strong>, run:</p>
-<div class="sourceCode" id="cb35"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add example.qmd</span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Add global gender life expectancy gap plot"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add example.qmd</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"Add global gender life expectancy gap plot"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Now the plot section is committed to your Git history.</p>
 </section>
 <section id="undo-the-commit-but-keep-changes" class="level2">
@@ -573,13 +604,13 @@ Figure&nbsp;8: Global trend in male and female life expectancy at birth from 195
 <p>To undo the last commit but keep the changes, run either:</p>
 <section id="option-a-soft-reset-keep-staged" class="level3">
 <h3 class="anchored" data-anchor-id="option-a-soft-reset-keep-staged">🔹 Option A: Soft Reset (Keep staged)</h3>
-<div class="sourceCode" id="cb36"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> reset <span class="at">--soft</span> HEAD~1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> reset <span class="at">--soft</span> HEAD~1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This will remove the commit but keep the changes <strong>staged</strong> (ready to commit again).</p>
 <p>You can now recommit with a new message.</p>
 </section>
 <section id="option-b-mixed-reset-keep-unstaged" class="level3">
 <h3 class="anchored" data-anchor-id="option-b-mixed-reset-keep-unstaged">🔸 Option B: Mixed Reset (Keep unstaged)</h3>
-<div class="sourceCode" id="cb37"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> reset HEAD~1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> reset HEAD~1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>This will remove the commit and <strong>unstage</strong> the changes — they go back to the working directory.</p>
 <p>See Figure <a href="#fig-reset-plot" class="quarto-xref">Figure&nbsp;9</a> for how we undid the last commit using git reset.</p>
 <div class="cell">
@@ -640,6 +671,7 @@ Figure&nbsp;9: Undoing the last commit using git reset while preserving the loca
 </tbody>
 </table>
 <p>🎉 You’ve now practiced essential Git skills — from branching and committing to conflict resolution and rollback!</p>
+<p>Git repository link: https://github.com/yluu0123/ETC5513-assignment-2-Git-Guide</p>
 </section>
 
 </main>
